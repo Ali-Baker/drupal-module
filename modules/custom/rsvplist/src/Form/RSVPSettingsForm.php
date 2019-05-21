@@ -60,7 +60,7 @@ class RSVPSettingsForm extends ConfigFormBase {
      */
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
-        $allowed_types = [$form_state->getValue('rsvplist_types')];
+        $allowed_types = array_filter($form_state->getValue('rsvplist_types'));
         sort($allowed_types);
         $this->config('rsvplist.settings')
             ->set('allowed_types', $allowed_types)
