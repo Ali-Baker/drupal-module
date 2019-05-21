@@ -4,7 +4,7 @@ view rsvplist:
 access rsvplist report:
   title: 'Access List of RSVPs'
   description: 'View the report listing all RSVPs submitted.'
-administer resplist:
+administer rsvplist:
   title: 'Administer RSVP Settings'
   description: 'Access the RSVP administrative setting page.'
   restrict access: true
