@@ -1,4 +1,4 @@
-n ame: RSVP List
+name: RSVP List
 type: module
 core: '8.x'
 description: 'Allows users to RSVP for Events and providers a contact list for admin'
