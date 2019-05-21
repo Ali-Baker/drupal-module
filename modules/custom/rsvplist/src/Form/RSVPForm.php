@@ -42,7 +42,15 @@ class RSVPForm extends FormBase
      */
     public function submitForm(array &$form, \Drupal\Core\Form\FormStateInterface $form_state)
     {
-        drupal_set_message(t('The form is working.'));
+        $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+        db_insert('rsvplist')->fields([
+            'mail'    => $form_state->getValue('email'),
+            'nid'     => $form_state->getValue('nig'),
+            'uid' => $user->id(),
+            'created' => time(),
+        ])->execute();
+
+        drupal_set_message(t('Thanks for your RSVP, you are on the list for the event.'));
     }
 
     /**
